@@ -152,13 +152,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arp.cpp" />
     <ClCompile Include="ether.cpp" />
+    <ClCompile Include="icmp.cpp" />
     <ClCompile Include="ip.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tcp.cpp" />
+    <ClCompile Include="udp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="arp.h" />
     <ClInclude Include="ether.h" />
+    <ClInclude Include="icmp.h" />
     <ClInclude Include="ip.h" />
+    <ClInclude Include="tcp.h" />
+    <ClInclude Include="udp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

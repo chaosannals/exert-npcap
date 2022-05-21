@@ -4,9 +4,17 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ether.cpp" />
     <ClCompile Include="ip.cpp" />
+    <ClCompile Include="tcp.cpp" />
+    <ClCompile Include="udp.cpp" />
+    <ClCompile Include="icmp.cpp" />
+    <ClCompile Include="arp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ether.h" />
     <ClInclude Include="ip.h" />
+    <ClInclude Include="tcp.h" />
+    <ClInclude Include="udp.h" />
+    <ClInclude Include="icmp.h" />
+    <ClInclude Include="arp.h" />
   </ItemGroup>
 </Project>

@@ -34,7 +34,16 @@ void handle_packet(u_char* param,const pcap_pkthdr* packet_header, const u_char*
 	ether2_header* eh = print_ether_header(packet_data);
 
 	std::cout << std::endl;
-	print_ip_header(packet_data);
+
+	// 0x0800, 由于本地是小头
+	if (eh->ether_type == 0x0008) {
+		print_ip_header(packet_data);
+	}
+
+	// 0x0806, 由于本地是小头
+	if (eh->ether_type == 0x0608) {
+
+	}
 }
 
 void monitor_adapter(int index) {

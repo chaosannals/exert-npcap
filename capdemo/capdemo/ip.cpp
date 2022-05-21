@@ -1,5 +1,8 @@
 #include "ip.h"
 #include "ether.h"
+#include "tcp.h"
+#include "udp.h"
+#include "icmp.h"
 #include <iostream>
 
 void print_ip_header(const std::uint8_t* packet_data) {
@@ -19,22 +22,25 @@ void print_ip_header(const std::uint8_t* packet_data) {
 	printf("Ð£ÑéºÍ£º %5X --> TTL: %4d ", check_sum, iph->tiem_to_live);
 	switch (iph->protocol) {
 	case 1:
-		std::cout << "ICMP ";
+		std::cout << "ICMP " << std::endl;
+		print_icmp_header(packet_data);
 		break;
 	case 2:
-		std::cout << "IGMP ";
+		std::cout << "IGMP " << std::endl;
 		break;
 	case 6:
-		std::cout << "TCP ";
+		std::cout << "TCP: " << std::endl;
+		print_tcp_header(packet_data);
 		break;
 	case 17:
-		std::cout << "UDP ";
+		std::cout << "UDP " << std::endl;
+		print_udp_header(packet_data);
 		break;
 	case 89:
-		std::cout << "OSPF ";
+		std::cout << "OSPF " << std::endl;
 		break;
 	default:
-		std::cout << "Unknown: " << (int)iph->protocol << " ";
+		std::cout << "Unknown: " << (int)iph->protocol << std::endl;
 		break;
 	}
 	std::cout << std::endl;
